@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    let  createHappy = (n,result = [])=>{
+        while (n != 0){
+            result.push(Math.pow(n%10,2))
+            n=Math.floor(n/10)
+        }
+
+        return result.reduce((acc,element)=> acc + element,0)
+    }
+
+    let isHappy =(n)=>{
+        while(n != 1){
+          n = createHappy(n)
+        }
+
+        return n === 1
+    }
+
+    console.log(isHappy(19))
+    console.log(isHappy(2))
+
+
+</script>
